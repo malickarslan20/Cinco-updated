@@ -15,21 +15,28 @@ const services: Service[] = [
     image: "/images/webdev.png",
   },
   {
-    title: "Mobile Development",
+    title: "Flutter Mobile App Development",
     description:
-      "We create seamless mobile experiences for Android and iOS using cutting-edge frameworks.",
+      "Native and cross-platform mobile applications that engage users and drive business growth.",
     image: "/images/mobile.png",
   },
   {
-    title: "UI/UX Design",
+    title: "Machine Learning",
     description:
-      "We craft intuitive, user-centered interfaces that enhance engagement and usability.",
+      "We design and deploy intelligent machine learning solutions that transform raw data into actionable insights.",
     image: "/images/design.png",
   },
   {
-    title: "Cloud Integration",
+    title: "Python Django Web Development",
     description:
-      "We help businesses scale and secure their infrastructure using cloud technologies like Firebase, AWS, and Appwrite.",
+      "Robust and scalable Python solutions tailored for web development, automation, and data processing.",
+    image: "/images/cloud.png",
+  },
+  
+  {
+    title: "Graphic Designing",
+    description:
+      "Creative and professional graphic design solutions that elevate your brand identity and visual appeal.",
     image: "/images/cloud.png",
   },
 ];
