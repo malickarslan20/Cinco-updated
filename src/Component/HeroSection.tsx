@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import Squares from "../components/Squares";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section className="relative w-full h-[550px] bg-black overflow-hidden">
       {/* Animated background */}
-      <Squares 
-        speed={0.5} 
+      <Squares
+        speed={0.5}
         squareSize={40}
         direction="diagonal"
         borderColor="#fff"
