@@ -33,13 +33,13 @@ const About: React.FC = () => {
   ];
 
   const values: Value[] = [
-    // {
-    //   icon: <Target className="text-purple-400" size={48} />,
-    //   title: "Mission-Driven",
-    //   description:
-    //     "We focus on delivering solutions that align with your business objectives and drive measurable results.",
-    //   color: "purple",
-    // },
+    {
+      icon: <Target className="text-purple-400" size={48} />,
+      title: "Mission-Driven",
+      description:
+        "We focus on delivering solutions that align with your business objectives and drive measurable results.",
+      color: "purple",
+    },
     {
       icon: <Users className="text-pink-400" size={48} />,
       title: "Client-Centric",
