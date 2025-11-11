@@ -4,7 +4,7 @@ import About from './Component/About'
 import HeroSection from './Component/HeroSection'
 import Navbar from './Component/Navbar'
 import Services from './Component/Services'
-
+import TeamSection from './Component/Team'
 
 function App() {
   
@@ -16,6 +16,7 @@ function App() {
    <HeroSection/>
    <About/>
    <Services/>
+   <TeamSection/>
     </div>
       
     </>
