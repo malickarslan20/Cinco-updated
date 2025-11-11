@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { JSX,useEffect, useRef } from "react";
 import { Target, Users, Award, Zap } from "lucide-react";
 import { motion, useInView, useAnimation, Variants } from "framer-motion";
 
@@ -16,8 +16,8 @@ interface Value {
 
 const About: React.FC = () => {
   const ref = useRef<HTMLElement | null>(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
-  const controls = useAnimation();
+const isInView = useInView(ref, { once: true, amount: 0.1 });
+const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
