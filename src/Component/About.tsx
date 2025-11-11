@@ -16,8 +16,8 @@ interface Value {
 
 const About: React.FC = () => {
   const ref = useRef<HTMLElement | null>(null);
-const isInView = useInView(ref, { once: true, amount: 0.1 });
-const controls = useAnimation();
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
