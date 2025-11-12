@@ -1,5 +1,5 @@
 import React from "react";
-import BounceCards from "@/components/BounceCards";
+// import BounceCards from "@/components/BounceCards";
 
 const teamMembers = [
   {
@@ -47,15 +47,15 @@ const TeamSection: React.FC = () => {
           technical expertise to every project we deliver.
         </p>
 
-        {/* --- Bouncing Cards Animation --- */}
+        {/* --- Bouncing Cards Animation ---
         <div className="flex justify-center">
           <BounceCards
             images={teamMembers.map((member) => member.image)}
-            containerWidth={700}
-            containerHeight={400}
+            // containerWidth={700}
+            // containerHeight={400}
             enableHover={true}
           />
-        </div>
+        </div> */}
 
         {/* --- Names & Roles Grid --- */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mt-20">
