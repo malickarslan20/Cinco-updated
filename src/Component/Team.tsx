@@ -3,35 +3,36 @@ import React from "react";
 
 const teamMembers = [
   {
-    name: "Malik Arslan",
-    role: "Full Stack Developer",
+    name: "Shayan Mirza",
+    role: "Co-founder & ML Engineer",
     image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=600&q=80",
   },
   {
-    name: "Ayesha Khan",
-    role: "UI/UX Designer",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80",
+    name: "Zia Ur Rehman",
+    role: "Co-founder & Django Developer",
+    image: "Zia.jpeg",
   },
   {
-    name: "Ali Raza",
-    role: "Frontend Engineer",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    name: "Kashif Ur Rehman",
+    role: "CTO & Full Stack Developer",
+    image: "Kashif.jpg",
   },
   {
-    name: "Sara Ahmed",
-    role: "Backend Engineer",
+    name: "Saad Ijaz",
+    role: "Senior MERN and Agentic AI Developer",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
   },
+  
   {
-    name: "Hassan Mirza",
-    role: "Project Manager",
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80",
+    name: "Malick Arslan",
+    role: "MERN Stack Developer",
+    image: "Arslan.jpg",
   },
   {
-    name: "Zainab Ali",
-    role: "QA Engineer",
-    image: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=600&q=80",
-  },
+    name: "Talha Ayyaz",
+    role: "Flutter Developer",
+    image: "Talha.jpeg",
+  }
 ];
 
 const TeamSection: React.FC = () => {
