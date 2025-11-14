@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: "Shayan Mirza",
     role: "Co-founder & ML Engineer",
-    image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=600&q=80",
+    image: "Shayan.jpg",
   },
   {
     name: "Zia Ur Rehman",
@@ -20,13 +20,13 @@ const teamMembers = [
   {
     name: "Saad Ijaz",
     role: "Senior MERN and Agentic AI Developer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+    image: "Saad1.jpg",
   },
   
   {
     name: "Malick Arslan",
     role: "MERN Stack Developer",
-    image: "Arslan.jpg",
+    image: "Arslan1.jpg",
   },
   {
     name: "Talha Ayyaz",
