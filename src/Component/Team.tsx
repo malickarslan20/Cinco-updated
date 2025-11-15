@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: "Shayan Mirza",
     role: "Co-founder & ML Engineer",
-    image: "Shayan.jpg",
+    image: "Shayan.jpeg",
   },
   {
     name: "Zia Ur Rehman",
