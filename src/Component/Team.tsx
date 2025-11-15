@@ -20,7 +20,7 @@ const teamMembers = [
   {
     name: "Saad Ijaz",
     role: "Senior MERN and Agentic AI Developer",
-    image: "Saad1.jpg",
+    image: "Saad.jpeg",
   },
   
   {

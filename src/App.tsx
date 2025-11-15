@@ -3,6 +3,7 @@ import './App.css'
 import About from './Component/About'
 import HeroSection from './Component/HeroSection'
 import Navbar from './Component/Navbar'
+import Projects from './Component/Porjects'
 import Services from './Component/Services'
 import TeamSection from './Component/Team'
 
@@ -17,6 +18,7 @@ function App() {
    <About/>
    <Services/>
    <TeamSection/>
+   <Projects/>
     </div>
       
     </>
