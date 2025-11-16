@@ -6,42 +6,44 @@ interface Project {
   description: string;
   image: string;
   link?: string;
+  premium?: boolean; // ⭐ NEW FIELD
 }
 
 const projects: Project[] = [
   {
     title: "Swapping Number Academy",
     description:
-      "A scalable multi-vendor marketplace with Stripe checkout and Firebase backend.",
-    image: "/images/project1.png",
-    link: "/case-study/ecommerce",
+      "Swappin Number Academy is a dynamic app that combines social interaction with advanced AI tools, allowing users to create posts, like/dislike content, chat with AI ",
+    image: "/Project/Web.jpg",
+    link: "swappinnumbersacademy.com",
+    premium: true, // ⭐ THIS WILL SHOW THE BADGE
   },
   {
-    title: "AI Chat Assistant",
+    title: " Voice Assistant",
     description:
-      "An ML-powered conversational assistant that automates responses and workflows.",
-    image: "/images/project2.png",
+      "It is a Python Powered Voice Assistant, can perform multiple tasks from opening any file or folder to opening any website",
+    image: "/Project/Voice.jpg",
     link: "/case-study/ai-assistant",
   },
   {
-    title: "Mobile Booking App",
+    title: "Property Price Predictor",
     description:
-      "Cross-platform Flutter booking application with smooth UX and animations.",
-    image: "/images/project3.png",
+      "It is a Machine Learning Project. It can predict prices of the property based on data given! It is accurate and 100% trustworthy.",
+    image: "/Project/Price.jpg",
     link: "/case-study/booking-app",
   },
   {
-    title: "Admin Dashboard System",
+    title: "Food Delivery Application",
     description:
-      "Django + React dashboard for analytics, reporting, and user management.",
-    image: "/images/project4.png",
+      "A customer-facing mobile application built with Flutter that enables users to browse restaurants, place food orders",
+    image: "/Project/App1.jpeg",
     link: "/case-study/dashboard",
   },
   {
-    title: "Brand Identity Design",
+    title: "Creative Graphic Design Portfolio for Social Media &Marketing",
     description:
-      "Complete branding package including logo, color palette, and social visuals.",
-    image: "/images/project5.png",
+      "This project showcases a diverse range of creative graphic designs tailored for social media marketing, academic promotions, product advertisements, events, and awareness campaigns. Our team crafted visually appealing",
+    image: "/Project/Graphic.jpeg",
     link: "/case-study/branding",
   },
 ];
@@ -78,8 +80,20 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-purple-500/40 transition-all group shadow-md"
+            className="relative bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-purple-500/40 transition-all group shadow-md"
           >
+            {/* ⭐ Special Badge for Premium Project */}
+            {project.premium && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+              >
+                🌍 International Project
+              </motion.div>
+            )}
+
             {/* Image */}
             <div className="overflow-hidden rounded-xl">
               <motion.img
@@ -101,13 +115,13 @@ const Projects = () => {
             {/* Case Study Button */}
             <a
               href={project.link || "#"}
-             className=" inline-block mt-5 px-5 py-2 rounded-full 
+              className="inline-block mt-5 px-5 py-2 rounded-full 
              bg-gradient-to-r from-purple-500 to-pink-500
              text-white font-semibold text-sm 
              hover:shadow-lg hover:shadow-purple-500/40 
              transition-all"
             >
-             <span className="text-white">View Case Study</span> 
+              <span className="text-white">View Case Study</span>
             </a>
           </motion.div>
         ))}

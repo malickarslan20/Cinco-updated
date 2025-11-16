@@ -12,33 +12,34 @@ const services: Service[] = [
     title: "Full Stack Web Development",
     description:
       "Custom web applications built with modern technologies for optimal performance, scalability, and seamless user experience.",
-    image: "/images/webdev.png",
+    image: "/Gig/Web.png",
   },
   {
     title: "Flutter Mobile App Development",
     description:
       "Native and cross-platform mobile applications that engage users and drive business growth.",
-    image: "/images/mobile.png",
+    image: "/Gig/App.png",
   },
   {
     title: "Machine Learning",
     description:
       "We design and deploy intelligent machine learning solutions that transform raw data into actionable insights.",
-    image: "/images/design.png",
+    image: "/Gig/Cinco.png",
   },
   {
     title: "Python Django Web Development",
     description:
-      "Robust and scalable Python solutions tailored for web development, automation, and data processing.",
-    image: "/images/cloud.png",
+      "Robust and scalable Django solutions tailored for web development, automation, and data processing.",
+    image: "/Gig/Web.png",
+  },
+  {
+    title: "Python Chatbots",
+    description:
+      "Automated and scalable Python solutions tailored for  automation, and Moderen Requirements.",
+    image: "/Gig/Python.png",
   },
   
-  {
-    title: "Graphic Designing",
-    description:
-      "Creative and professional graphic design solutions that elevate your brand identity and visual appeal.",
-    image: "/images/cloud.png",
-  },
+ 
 ];
 
 const Services: React.FC = () => {
