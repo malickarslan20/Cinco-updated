@@ -17,8 +17,8 @@ function App() {
    <HeroSection/>
    <About/>
    <Services/>
-   <TeamSection/>
    <Projects/>
+   <TeamSection/>
     </div>
       
     </>
