@@ -3,7 +3,7 @@ import Squares from "../components/Squares";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-[550px] bg-black overflow-hidden">
+    <section id="hero" className="relative w-full h-[550px] bg-black overflow-hidden">
       {/* Animated background */}
       <Squares
         speed={0.5}

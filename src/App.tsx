@@ -1,6 +1,8 @@
 
 import './App.css'
 import About from './Component/About'
+import ContactForm from './Component/Contact'
+import Footer from './Component/Footer'
 import HeroSection from './Component/HeroSection'
 import Navbar from './Component/Navbar'
 import Projects from './Component/Porjects'
@@ -19,6 +21,8 @@ function App() {
    <Services/>
    <Projects/>
    <TeamSection/>
+   <ContactForm/>
+   <Footer/>
     </div>
       
     </>
