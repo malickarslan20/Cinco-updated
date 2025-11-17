@@ -2,8 +2,16 @@ import { motion } from "framer-motion";
 import Squares from "../components/Squares";
 
 const Hero: React.FC = () => {
+  // Scroll handlers
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="hero" className="relative w-full h-[550px] bg-black overflow-hidden">
+    <section id="home" className="relative w-full h-[550px] bg-black overflow-hidden">
       {/* Animated background */}
       <Squares
         speed={0.5}
@@ -13,7 +21,7 @@ const Hero: React.FC = () => {
         hoverFillColor="#222"
       />
 
-      {/* Optional overlay gradient for better readability */}
+      {/* Optional overlay gradient */}
       <div className="absolute inset-0 bg-black/30 z-5"></div>
 
       {/* Hero content */}
@@ -28,7 +36,10 @@ const Hero: React.FC = () => {
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          
+          {/* Get Started → Contact Form */}
           <motion.button
+            onClick={() => scrollToSection("contact")}
             className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -36,7 +47,9 @@ const Hero: React.FC = () => {
             Get Started
           </motion.button>
 
+          {/* View Services → Services Section */}
           <motion.button
+            onClick={() => scrollToSection("services")}
             className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-purple transition text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
