@@ -63,7 +63,7 @@ const Footer = () => {
             href="cincobyteofficial@gmail.com"
             className="mt-2 inline-block text-pink-400 hover:text-purple-400 transition"
           >
-            cincobyte@gmail.com
+            cincobyteofficial@gmail.com
           </a>
 
           <div className="flex items-center gap-5 mt-5">
