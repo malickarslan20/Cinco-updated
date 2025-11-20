@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     title: "Swapping Number Academy",
     descriptionPoints: [
-      "Dynamic app combining social interaction with AI tools.",
+      "Dynamic app combining social interaction with advanced AI tools and features.",
       "Users can create posts, like/dislike content, chat with AI.",
       "Advanced AI tools help generate content suggestions and automate tasks.",
     ],
@@ -26,27 +26,23 @@ const projects: Project[] = [
     premium: true,
   },
   {
-  title: "Mamaar-e-Jahaan",
-  descriptionPoints: [
-    "More than a society — it's a movement of passionate medicos from Sargodha Medical College.",
-    "Rooted in Iqbal’s dream and the spirit of Shaheen.",
-    "We work to uplift students spiritually, mentally, and professionally.",
-    "Guiding them toward balanced lives of purpose, resilience, and leadership.",
-    "All activities are conducted under the light of divine values.",
-    "Includes an Admin Panel and a Student Panel for management and participation."
-  ],
-  techStack: ["TypeScript", "Node.js", "Framer Motion"],
-  images: [
-    "/Project/M1.jpg",
-    "/Project/M2.jpg",
-    "/Project/M3.jpg"
-  ],
-  deploy: "https://mamaar-e-jahaan.com",
-},
+    title: "Mamaar-e-Jahaan",
+    descriptionPoints: [
+      "More than a society — it’s a movement of medicos working with passion.",
+      "Rooted in Iqbal’s dream and the spirit of Shaheen.",
+      "We work to uplift students spiritually, mentally, and professionally.",
+      "Guiding them toward balanced lives of purpose, resilience, and leadership.",
+      "All activities are conducted under the light of divine values.",
+      "Includes an Admin Panel and a Student Panel for management and participation.",
+    ],
+    techStack: ["TypeScript", "Node.js", "Framer Motion"],
+    images: ["/Project/M1.jpg", "/Project/M2.jpg", "/Project/M3.jpg"],
+    deploy: "https://mamaar-e-jahaan.com",
+  },
   {
     title: "Voice Assistant",
     descriptionPoints: [
-      "Python-powered voice assistant performing multiple tasks.",
+      "Python-powered voice assistant capable of performing multiple intelligent tasks.",
       "Can open files, folders, websites, and play music.",
       "Responds to commands intelligently using speech recognition.",
     ],
@@ -57,7 +53,7 @@ const projects: Project[] = [
   {
     title: "Property Price Predictor",
     descriptionPoints: [
-      "Machine Learning project predicting property prices.",
+      "Machine Learning project predicting property prices accurately and efficiently.",
       "Accurate predictions based on historical data.",
       "Uses regression models and preprocessing techniques.",
     ],
@@ -68,7 +64,7 @@ const projects: Project[] = [
   {
     title: "Food Delivery Application",
     descriptionPoints: [
-      "Mobile app to browse restaurants and place food orders.",
+      "Mobile app to browse restaurants, place food orders, and track them easily.",
       "Order tracking, restaurant reviews, and secure payment integration.",
       "Built for both iOS and Android platforms.",
     ],
@@ -78,7 +74,7 @@ const projects: Project[] = [
   {
     title: "Creative Graphic Design Portfolio",
     descriptionPoints: [
-      "Showcases creative graphic designs for social media marketing.",
+      "Showcases creative graphic designs for social media marketing campaigns.",
       "Includes academic promotions, product advertisements, events, and awareness campaigns.",
       "Designs are visually appealing and tailored for each client.",
     ],
@@ -123,7 +119,7 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
         >
-          Our Projects
+          Our Portfolio
         </motion.h2>
 
         <motion.p
@@ -144,7 +140,7 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="relative bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-purple-500/40 transition-all group shadow-md"
+            className="relative bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-purple-500/40 transition-all group shadow-md flex flex-col"
           >
             {project.premium && (
               <motion.div
@@ -166,18 +162,20 @@ const Projects: React.FC = () => {
             </div>
 
             <h3 className="text-2xl font-semibold mt-5 text-purple-300">{project.title}</h3>
-            <p className="text-gray-400 mt-3 text-base leading-relaxed">
+            <p className="text-gray-400 mt-3 text-base leading-relaxed flex-grow">
               {project.descriptionPoints[0]}
             </p>
 
-            <button
-              type="button"
-              aria-label={`View Case Study of ${project.title}`}
-              onClick={() => openModal(project)}
-              className="inline-block mt-5 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm hover:shadow-lg hover:shadow-purple-500/40 transition-all"
-            >
-              View Case Study
-            </button>
+            <div className="mt-auto">
+              <button
+                type="button"
+                aria-label={`View Case Study of ${project.title}`}
+                onClick={() => openModal(project)}
+                className="inline-block mt-5 w-full px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+              >
+                View Case Study
+              </button>
+            </div>
           </motion.div>
         ))}
       </div>
