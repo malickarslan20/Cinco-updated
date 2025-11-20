@@ -7,12 +7,13 @@ const Footer = () => {
     <footer className="bg-black text-gray-300 pt-20 pb-10 px-6 md:px-12 border-t border-white/10">
       {/* Top Footer */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 pb-10">
-        
+
         {/* About + Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="flex w-full flex-col items-center sm:items-start"
         >
           <div className="flex items-center gap-3">
             {/* LOGO IMAGE */}
@@ -28,7 +29,7 @@ const Footer = () => {
             </h2>
           </div>
 
-          <p className="mt-4 text-gray-400 leading-relaxed">
+          <p className="mt-4 text-center sm:text-left text-gray-400 leading-relaxed">
             Delivering value in every byte with modern web solutions, AI tools,
             automation systems, and visually stunning digital experiences.
           </p>
@@ -39,6 +40,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex w-full flex-col items-center sm:items-start"
         >
           <h3 className="text-xl font-semibold text-white">Quick Links</h3>
           <ul className="mt-4 space-y-3">
@@ -54,13 +56,14 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex w-full flex-col items-center sm:items-start"
         >
           <h3 className="text-xl font-semibold text-white">Get in Touch</h3>
 
           <p className="mt-4 text-gray-400">Email us anytime.</p>
 
           <a
-            href="cincobyteofficial@gmail.com"
+            href="mailto:cincobyteofficial@gmail.com"
             className="mt-2 inline-block text-pink-400 hover:text-purple-400 transition"
           >
             cincobyteofficial@gmail.com
@@ -68,9 +71,9 @@ const Footer = () => {
 
           <div className="flex items-center gap-5 mt-5">
             <a href="#" className="hover:text-purple-400 transition"><Facebook size={22} /></a>
-            <a href="https://www.instagram.com/cincobyte_/" className="hover:text-purple-400 transition"><Instagram size={22} /></a>
-            <a href="https://www.linkedin.com/company/cincobyte/" className="hover:text-purple-400 transition"><Linkedin size={22} /></a>
-            <a href="cincobyteofficial@gmail.com" className="hover:text-purple-400 transition"><Mail size={22} /></a>
+            <a href="https://www.instagram.com/cincobyte_/" target="_blank" rel="noopener" className="hover:text-purple-400 transition"><Instagram size={22} /></a>
+            <a href="https://www.linkedin.com/company/cincobyte/" target="_blank" rel="noopener" className="hover:text-purple-400 transition"><Linkedin size={22} /></a>
+            <a href="mailto:cincobyteofficial@gmail.com" className="hover:text-purple-400 transition"><Mail size={22} /></a>
           </div>
         </motion.div>
       </div>

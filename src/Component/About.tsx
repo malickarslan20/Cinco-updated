@@ -1,6 +1,6 @@
-import { JSX,useEffect, useRef } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
 import { Target, Users, Award, Zap } from "lucide-react";
-import { motion, useInView, useAnimation, Variants } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Stat {
   number: string;
@@ -14,23 +14,86 @@ interface Value {
   color: string;
 }
 
+/* ---------------------------------------------
+   Keep stats stable (move outside component)
+   so the hook isn't retriggered every render.
+--------------------------------------------- */
+const STATS: Stat[] = [
+  { number: "10+", label: "Projects Completed" },
+  { number: "5+", label: "Happy Clients" },
+  { number: "2+", label: "Years Experience" },
+];
+
+/* ===========================================
+   SAFE COUNT-UP HOOK (works in browser)
+   - expects stable stats (we use STATS)
+   - runs once when isInView becomes true
+=========================================== */
+const useCountUpArray = (stats: Stat[], isInView: boolean) => {
+  const [counts, setCounts] = useState<string[]>(() => stats.map(() => "0"));
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const intervals: number[] = [];
+
+    stats.forEach((stat, index) => {
+      const numericStr = stat.number.replace(/\D/g, "");
+      const numeric = numericStr === "" ? NaN : parseInt(numericStr, 10);
+      const symbol = stat.number.replace(/[0-9]/g, "");
+
+      if (Number.isNaN(numeric)) {
+        setCounts((prev) => {
+          const updated = [...prev];
+          updated[index] = stat.number;
+          return updated;
+        });
+        return;
+      }
+
+      const duration = 2000;
+      const tickMs = 75;
+      const steps = Math.max(1, Math.floor(duration / tickMs));
+      const increment = numeric / steps;
+
+      let current = 0;
+      const id = window.setInterval(() => {
+        current += increment;
+        if (current >= numeric) {
+          setCounts((prev) => {
+            const updated = [...prev];
+            updated[index] = `${numeric}${symbol}`;
+            return updated;
+          });
+          window.clearInterval(id);
+        } else {
+          setCounts((prev) => {
+            const updated = [...prev];
+            updated[index] = `${Math.floor(current)}${symbol}`;
+            return updated;
+          });
+        }
+      }, tickMs);
+
+      intervals.push(id);
+    });
+
+    return () => intervals.forEach((i) => window.clearInterval(i));
+  }, [isInView, stats]);
+
+  return counts;
+};
+
 const About: React.FC = () => {
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const controls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
+    if (isInView) controls.start("visible");
   }, [isInView, controls]);
 
-  const stats: Stat[] = [
-    { number: "10+", label: "Projects Completed" },
-    { number: "5+", label: "Happy Clients" },
-    { number: "2+", label: "Years Experience" },
-    { number: "24/7", label: "Support" },
-  ];
+  const animatedCounts = useCountUpArray(STATS, isInView);
 
   const values: Value[] = [
     {
@@ -63,30 +126,6 @@ const About: React.FC = () => {
     },
   ];
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 60, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  // map actual tailwind classes for safe build
   const gradientMap: Record<string, string> = {
     purple: "from-purple-400 to-purple-600",
     pink: "from-pink-400 to-pink-600",
@@ -95,105 +134,61 @@ const About: React.FC = () => {
   };
 
   return (
-    <section
-      id="about"
-      ref={ref}
-      className="py-24 bg-black text-white overflow-hidden"
-    >
+    <section id="about" ref={ref} className="py-24 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6">
-        {/* Title Section */}
-        <motion.div
-          className="text-center mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold pb-2 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-6"
-          >
+        {/* Title */}
+        <motion.div className="text-center mb-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+          <h2 className="text-4xl md:text-5xl font-bold pb-2 bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
             About Cincobyte
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            We are a forward-thinking technology company dedicated to
-            transforming businesses through innovative digital solutions and
-            exceptional user experiences.
-          </motion.p>
+          </h2>
+          <p className="md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            We are a forward-thinking technology company dedicated to transforming
+            businesses through innovative digital solutions and exceptional user experiences.
+          </p>
         </motion.div>
 
-        {/* Animated Stats */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center"
-              whileHover={{
-                scale: 1.15,
-                transition: { duration: 0.4 },
-              }}
-            >
-              <motion.div
-                className="text-4xl md:text-5xl font-extrabold text-purple-400 mb-2"
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                {stat.number}
-              </motion.div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20">
+          {STATS.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-extrabold text-purple-400 mb-2 animate-pulse">
+                {animatedCounts[index] ?? stat.number}
+              </div>
               <div className="text-gray-400 font-medium">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-extrabold text-purple-400 mb-2 animate-pulse">
+              24/7
+            </div>
+            <div className="text-gray-400 font-medium">Support</div>
+          </div>
+        </div>
 
-        {/* Values Section */}
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-        >
+        {/* Values */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              className="bg-zinc-900/60 border border-purple-700/40 p-8 rounded-2xl shadow-lg hover:shadow-purple-500/30 transition-all duration-500 cursor-default backdrop-blur-sm"
-              whileHover={{
-                y: -10,
-                scale: 1.05,
-                rotate: [0, 1, -1, 0],
-              }}
+              className="bg-zinc-900/60 border border-purple-700/40 p-8 rounded-2xl shadow-lg 
+                 cursor-default backdrop-blur-sm"
+              whileHover={{ y: -10, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <motion.div
                 className="mb-4"
-                whileHover={{
-                  rotate: [0, -8, 8, 0],
-                  scale: 1.1,
-                }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.15, rotate: [0, -8, 8, 0] }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 {value.icon}
               </motion.div>
+
               <h3 className="text-xl font-semibold text-purple-300 mb-3">
                 {value.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {value.description}
-              </p>
 
-              {/* ✅ Fixed Animated Line (works for all cards) */}
+              <p className="text-gray-400 leading-relaxed">{value.description}</p>
+
               <motion.div
                 className={`mt-5 h-1 rounded-full bg-gradient-to-r ${gradientMap[value.color]}`}
                 initial={{ width: 0 }}
@@ -203,7 +198,9 @@ const About: React.FC = () => {
               />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
+
       </div>
     </section>
   );

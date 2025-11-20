@@ -59,7 +59,7 @@ const TeamSection: React.FC = () => {
         </div> */}
 
         {/* --- Names & Roles Grid --- */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mt-20">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-10 mt-20">
           {teamMembers.map((member, idx) => (
             <div
               key={idx}

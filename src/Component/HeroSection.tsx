@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         transition={{ duration: 1 }}
       >
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Delivering <span className="text-purple-500">value</span> in every byte
+          Delivering <span className="text-purple-500">Value</span> in Every Byte.
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">

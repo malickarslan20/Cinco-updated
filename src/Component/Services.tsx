@@ -33,7 +33,7 @@ const services: Service[] = [
     image: "/Gig/Web.png",
   },
   {
-    title: "Python Chatbots",
+    title: "AI Agents",
     description:
       "Automated and scalable Python solutions tailored for  automation, and Moderen Requirements.",
     image: "/Gig/Python.png",
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
     <section
       id="services"
       ref={containerRef}
-      className={`relative bg-black text-white`}
+      className={`relative bg-black text-white px-6`}
       style={{ height: `${services.length * 100}vh` }} // each service gets full viewport height
     >
       {/* Heading */}
@@ -79,7 +79,7 @@ const Services: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
           What We Offer?
         </h2>
         <p className="text-gray-400 mt-4 text-lg">
