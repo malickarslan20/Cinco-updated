@@ -5,33 +5,33 @@ const teamMembers = [
   {
     name: "Shayan Mirza",
     role: "Co-founder & ML Engineer",
-    image: "Shayan.jpeg",
+    image: "/Team/Shayan.jpeg",
   },
   {
     name: "Zia Ur Rehman",
     role: "Co-founder & Django Developer",
-    image: "Zia.jpeg",
+    image: "/Team/Zia.jpeg",
   },
   {
     name: "Kashif Ur Rehman",
     role: "CTO & Full Stack Developer",
-    image: "Kashif.jpg",
+    image: "/Team/Kashif.jpg",
   },
   {
     name: "Saad Ijaz",
     role: "Senior MERN and Agentic AI Developer",
-    image: "Saad.jpeg",
+    image: "/Team/Saad.jpeg",
   },
   
   {
     name: "Malick Arslan",
     role: "MERN Stack Developer",
-    image: "Arslan1.jpg",
+    image: "/Team/Arslan1.jpg",
   },
   {
     name: "Talha Ayyaz",
     role: "Flutter Developer",
-    image: "Talha.jpeg",
+    image: "/Team/Talha.jpeg",
   }
 ];
 

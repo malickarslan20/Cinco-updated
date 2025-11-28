@@ -1,4 +1,3 @@
-
 import './App.css'
 import About from './Component/About'
 import ContactForm from './Component/Contact'
@@ -6,26 +5,35 @@ import Footer from './Component/Footer'
 import HeroSection from './Component/HeroSection'
 import Navbar from './Component/Navbar'
 import Projects from './Component/Porjects'
+import AllProjects from './Component/AllProjects'
 import Services from './Component/Services'
 import TeamSection from './Component/Team'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
-  
-
   return (
-    <>
-    <div className="min-h-screen bg-black text-white w-screen">
-   <Navbar/>
-   <HeroSection/>
-   <About/>
-   <Services/>
-   <Projects/>
-   <TeamSection/>
-   <ContactForm/>
-   <Footer/>
-    </div>
-      
-    </>
+    <Router>
+      <div className="min-h-screen bg-black text-white w-screen">
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <About />
+                <Services />
+                <Projects />
+                <TeamSection />
+                <ContactForm />
+              </>
+            }
+          />
+          <Route path="/AllProjects" element={<AllProjects />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
