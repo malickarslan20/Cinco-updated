@@ -21,7 +21,7 @@ const projects: Project[] = [
       "Advanced AI tools help generate content suggestions and automate tasks.",
     ],
     techStack: ["React.js", "Node.js", "Firebase", "OpenAI API"],
-    images: ["/Project/Web.jpg"],
+    images: ["/Project/Swapping.png"],
     deploy: "https://swappinnumbersacademy.com",
     premium: true,
   },
@@ -221,7 +221,7 @@ const Projects: React.FC = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+                className="absolute top-2 right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
               >
                 🌍 International Project
               </motion.div>
@@ -333,7 +333,8 @@ const Projects: React.FC = () => {
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-gray-800 rounded-full font-semibold text-white hover:bg-purple-500 transition"
+                  className="px-6 py-3 bg-gray-800 rounded-full font-semibold text-white hover:bg-purple-500 hover:!text-white transition"
+
                 >
                   GitHub Repo
                 </a>
@@ -343,7 +344,9 @@ const Projects: React.FC = () => {
                   href={selectedProject.deploy}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-gray-800 rounded-full font-semibold text-white hover:bg-purple-500 transition"
+                  className="px-6 py-3 bg-gray-800 rounded-full font-semibold text-white hover:bg-purple-500 hover:!text-white transition"
+
+
                 >
                   Deployment Link
                 </a>
