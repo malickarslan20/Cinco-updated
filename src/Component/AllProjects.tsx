@@ -64,6 +64,31 @@ const projects: Project[] = [
 
     deploy: "https://pakqurtubaoep.com/",
   },
+{
+    title: "MasjidConnect",
+    descriptionPoints: [
+      "Automated prayer time updates daily via API",
+"Mosque registration & secure admin login",
+"Admin dashboard for uploading events and announcements",
+"SMS & email notification support",
+"Django REST APIs for all data",
+"Celery for background tasks (notifications, scheduled updates)",
+"Admin can Register mosque and manage profile",
+"Admin can Add, edit, or delete events",
+"Admin can Post community announcements",
+"Admin can Send SMS/email notifications of events",
+"Admin can Manage prayer time settings (API sync or manual)",
+"Admin can View dashboard analytics",
+
+" Users Can View live, automatically updated prayer times",
+"Users Can Browse mosque events and announcements",
+"Users Can Receive notifications/alerts"
+    ],
+    techStack: ["React.js", "DJango", "Rest API","Celery","MYSQL"],
+    images: ["/Project/Masjid/thumbnail.jpg","/Project/Masjid/Homepage.png","/Project/Masjid/Features.jpeg","/Project/Masjid/Events.jpeg","/Project/Masjid/Mosque.png","/Project/Masjid/Search.png"],
+    deploy: "https://swappinnumbersacademy.com",
+  },
+
   {
     title: "Voice Assistant",
     descriptionPoints: [

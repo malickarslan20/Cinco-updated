@@ -139,14 +139,14 @@ const Projects: React.FC = () => {
             </div>
 
             <h3 className="text-2xl font-semibold mt-5 text-purple-300">{project.title}</h3>
-            <p className="text-gray-400 mt-3 text-base leading-relaxed flex-grow">
+            <p className="text-gray-400 mt-3 text-base leading-relaxed grow">
               {project.descriptionPoints[0]}
             </p>
 
             <div className="mt-auto">
               <button
                 onClick={() => openModal(project)}
-                className="inline-block mt-5 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-xs hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+                className="inline-block mt-5 px-4 py-1.5 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold text-xs hover:shadow-lg hover:shadow-purple-500/40 transition-all"
               >
                 View Case Study
               </button>

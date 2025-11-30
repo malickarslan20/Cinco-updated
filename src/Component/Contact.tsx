@@ -9,7 +9,7 @@ const ContactForm = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+          className="text-5xl md:text-6xl font-bold bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
         >
           Contact Us
         </motion.h2>
@@ -76,7 +76,7 @@ const ContactForm = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 
+            className="w-full py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 
                        text-white font-semibold text-lg shadow-lg hover:shadow-purple-500/40 
                        transition-all"
           >
