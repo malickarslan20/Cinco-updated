@@ -114,22 +114,23 @@ export const AnimatedTestimonials = ({
           {/* BUTTONS */}
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
-              onClick={handlePrev}
-              className="group flex h-10 w-10 items-center justify-center rounded-full
-                         bg-white/10 backdrop-blur-md border border-purple-500/40
-                         hover:shadow-[0_0_15px_#a855f7] transition-all duration-300"
-            >
-              <IconArrowLeft className="h-6 w-6 text-white" />
-            </button>
+  onClick={handlePrev}
+  className="group flex h-10 w-10 items-center justify-center rounded-full
+             bg-white/10 backdrop-blur-md border border-purple-500/40
+             hover:shadow-[0_0_15px_#a855f7] transition-all duration-300"
+>
+  <IconArrowLeft className="h-6 w-6" stroke={2} strokeWidth={2} color="white" />
+</button>
 
-            <button
-              onClick={handleNext}
-              className="group flex h-10 w-10 items-center justify-center rounded-full
-                         bg-white/10 backdrop-blur-md border border-purple-500/40 text-white
-                         hover:shadow-[0_0_15px_#a855f7] transition-all duration-300"
-            >
-              <IconArrowRight className="h-6 w-6 text-white " />
-            </button>
+<button
+  onClick={handleNext}
+  className="group flex h-10 w-10 items-center justify-center rounded-full
+             bg-white/10 backdrop-blur-md border border-purple-500/40
+             hover:shadow-[0_0_15px_#a855f7] transition-all duration-300"
+>
+  <IconArrowRight className="h-6 w-6" stroke={2} strokeWidth={2} color="white" />
+</button>
+
           </div>
 
         </div>
