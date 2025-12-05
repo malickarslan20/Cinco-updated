@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import Squares from "../components/Squares";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Hero: React.FC = () => {
+  const location = useLocation();
+
   // Scroll handlers
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -9,6 +13,19 @@ const Hero: React.FC = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Scroll automatically if location.state.scrollTo exists
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        // Slight delay to ensure component is fully mounted
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+      }
+    }
+  }, [location.state]);
 
   return (
     <section id="home" className="relative w-full h-[550px] bg-black overflow-hidden">
@@ -36,7 +53,6 @@ const Hero: React.FC = () => {
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          
           {/* Get Started → Contact Form */}
           <motion.button
             onClick={() => scrollToSection("contact")}
