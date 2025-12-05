@@ -146,7 +146,8 @@ const Projects: React.FC = () => {
             <div className="mt-auto">
               <button
                 onClick={() => openModal(project)}
-                className="inline-block mt-5 px-4 py-1.5 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold text-xs hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+               className="inline-block mt-5 px-6 py-3 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+
               >
                 View Case Study
               </button>
