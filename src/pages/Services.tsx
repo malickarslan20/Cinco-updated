@@ -45,7 +45,7 @@ const ServiceCard = ({
             <h3 className="text-2xl font-bold mb-4 text-white">
               {service.name}
             </h3>
-            <p className="text-gray-400 mb-6">{service.description}</p>
+            {/* <p className="text-gray-400 mb-6">{service.description}</p> */}
 
             <div className="text-purple-400 font-semibold text-sm">
               Learn More →

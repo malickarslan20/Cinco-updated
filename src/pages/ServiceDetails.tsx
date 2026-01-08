@@ -59,11 +59,11 @@ const ServiceDetails = () => {
           )}
 
           {/* Image */}
-          <img
+          {/* <img
             src={service.src}
             alt={service.name}
             className="rounded-2xl mb-16 mx-auto w-full max-w-2xl shadow-2xl"
-          />
+          /> */}
         </div>
 
         {/* Details Section */}
