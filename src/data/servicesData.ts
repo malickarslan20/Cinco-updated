@@ -23,7 +23,7 @@ export const services: Service[] = [
       ],
       technologies: ["React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "MongoDB", "AWS"],
       deliveryTime: "2-8 weeks depending on complexity",
-      projectsCompleted: 150,
+      projectsCompleted: 15,
       clientTestimonial: "Cincobyte transformed our outdated website into a modern, high-performing application. Our conversion rate increased by 240% in just 3 months! The team's attention to detail and commitment to excellence exceeded all expectations.",
       useCases: [
         "E-commerce platforms with payment integration",
@@ -56,7 +56,7 @@ export const services: Service[] = [
       ],
       technologies: ["Flutter", "Dart", "Firebase", "SQLite", "REST APIs", "Provider/Bloc", "Google Maps API", "Stripe"],
       deliveryTime: "3-10 weeks depending on features",
-      projectsCompleted: 200,
+      projectsCompleted: 10,
       clientTestimonial: "Our Flutter app has 4.8 stars on both app stores with over 500K downloads. Cincobyte's attention to detail and user experience is exceptional! They delivered ahead of schedule and the app runs flawlessly on all devices.",
       useCases: [
         "Social networking and messaging applications",
@@ -89,7 +89,7 @@ export const services: Service[] = [
       ],
       technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "OpenCV", "Keras", "Docker", "Kubernetes"],
       deliveryTime: "4-12 weeks including training and deployment",
-      projectsCompleted: 80,
+      projectsCompleted: 5,
       clientTestimonial: "The predictive model Cincobyte built reduced our operational costs by 35% and improved forecast accuracy from 72% to 94%. Game-changing results! The ROI was evident within the first two months of deployment.",
       useCases: [
         "Demand forecasting for inventory optimization",
@@ -122,7 +122,7 @@ export const services: Service[] = [
       ],
       technologies: ["Django", "Python", "PostgreSQL", "Redis", "Celery", "Docker", "Nginx", "Gunicorn", "React"],
       deliveryTime: "3-10 weeks based on project scope",
-      projectsCompleted: 120,
+      projectsCompleted: 9,
       clientTestimonial: "Cincobyte migrated our legacy system to Django and reduced our server costs by 60% while improving performance by 10x. The migration was seamless with zero downtime. Highly recommended!",
       useCases: [
         "Content management and publishing platforms",
@@ -142,7 +142,7 @@ export const services: Service[] = [
     gradient: "from-indigo-500 to-purple-500",
     src: "/Gig/Python.png",
     details: {
-      overview: "We've deployed 60+ intelligent AI agents automating complex workflows and saving our clients thousands of hours monthly. Our agents leverage GPT-4, Claude, and custom LLMs to handle tasks with human-like understanding and precision. From customer support to data processing, our AI agents work 24/7 with 98% accuracy rates, transforming how businesses operate.",
+      overview: "We've deployed 20+ intelligent AI agents automating complex workflows and saving our clients thousands of hours monthly. Our agents leverage GPT-4, Claude, and custom LLMs to handle tasks with human-like understanding and precision. From customer support to data processing, our AI agents work 24/7 with 98% accuracy rates, transforming how businesses operate.",
       keyFeatures: [
         "Custom AI agent development with LangChain and LlamaIndex",
         "Conversational AI and intelligent chatbot systems",
@@ -155,7 +155,7 @@ export const services: Service[] = [
       ],
       technologies: ["Python", "LangChain", "OpenAI API", "Anthropic Claude", "Pinecone", "ChromaDB", "FastAPI", "LlamaIndex"],
       deliveryTime: "2-6 weeks depending on complexity",
-      projectsCompleted: 60,
+      projectsCompleted: 6,
       clientTestimonial: "The AI agent handles 80% of our customer inquiries with 95% satisfaction rate. It's like having 10 support agents working 24/7! Our response time dropped from 4 hours to under 2 minutes, and customer satisfaction skyrocketed.",
       useCases: [
         "24/7 customer support automation and ticket resolution",
