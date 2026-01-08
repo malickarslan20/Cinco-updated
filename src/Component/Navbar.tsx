@@ -89,18 +89,18 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       <div
-        className={`sm:hidden absolute top-[110%] right-2
+        className={`sm:hidden absolute top-[110%] right-0
         bg-black/90 backdrop-blur-xl border border-white/30
-        rounded-2xl py-4 px-5 shadow-lg
-        flex flex-col items-start gap-2 w-[160px]
+        rounded-2xl py-4 px-3 shadow-lg
+        flex flex-col items-start gap-2 min-w-[200px]
         transition-all duration-300 origin-top-right
         ${open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}`}
       >
         {menuItems.map((item) =>
           item.isDropdown ? (
-            <div key={item.name} className="flex flex-col">
+            <div key={item.name} className="flex flex-col w-full">
               {/* Top-level Services label */}
-              <span className="px-2 py-1 text-white font-medium cursor-default">
+              <span className="px-2 py-1 text-blue-400 font-medium cursor-default w-full">
                 {item.name}
               </span>
               {/* Services sub-links in blue */}
@@ -109,7 +109,7 @@ const Navbar = () => {
                   key={service.slug}
                   to={`/services/${service.slug}`}
                   onClick={() => setOpen(false)}
-                  className="pl-4 pr-2 py-1 text-blue-400 text-sm hover:text-blue-300 transition"
+                  className="pl-6 py-1 text-blue-400 text-sm hover:text-blue-300 block w-full transition"
                 >
                   {service.name}
                 </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="px-2 py-1 text-white text-sm hover:text-purple-400 transition"
+              className="px-2 py-1 text-white text-sm hover:text-purple-400 block w-full transition"
             >
               {item.name}
             </a>
