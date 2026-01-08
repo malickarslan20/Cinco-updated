@@ -6,7 +6,7 @@ import { services } from "../data/servicesData";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false); // Hover state for desktop
+  const [servicesOpen, setServicesOpen] = useState(false); // Desktop hover
 
   const menuItems = [
     { name: "Home", href: "/#home" },
@@ -50,14 +50,14 @@ const Navbar = () => {
                 {item.name}
               </Link>
 
-              {/* Services Dropdown */}
+              {/* Desktop Services Dropdown */}
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-black/90 border border-white/20 rounded-lg py-2 min-w-[180px] flex flex-col shadow-lg z-50">
                   {services.map((service) => (
                     <Link
                       key={service.slug}
                       to={`/services/${service.slug}`}
-                      className="px-4 py-2 text-white text-sm hover:bg-purple-500/10 hover:text-purple-400 transition"
+                      className="px-4 py-2 text-blue-400 text-sm hover:text-blue-300 transition"
                     >
                       {service.name}
                     </Link>
@@ -99,15 +99,17 @@ const Navbar = () => {
         {menuItems.map((item) =>
           item.isDropdown ? (
             <div key={item.name} className="flex flex-col">
+              {/* Top-level Services label */}
               <span className="px-2 py-1 text-white font-medium cursor-default">
                 {item.name}
               </span>
+              {/* Services sub-links in blue */}
               {services.map((service) => (
                 <Link
                   key={service.slug}
                   to={`/services/${service.slug}`}
                   onClick={() => setOpen(false)}
-                  className="pl-4 pr-2 py-1 text-white text-sm hover:text-purple-400 transition"
+                  className="pl-4 pr-2 py-1 text-blue-400 text-sm hover:text-blue-300 transition"
                 >
                   {service.name}
                 </Link>
