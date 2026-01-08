@@ -11,7 +11,8 @@ import Navbar from "./Component/Navbar";
 import Projects from "./Component/Porjects";
 import AllProjects from "./Component/AllProjects";
 import TeamSection from "./Component/Team";
-import Services from "./Component/Services";
+import Services from "./pages/Services";
+import ServiceDetails from "./pages/ServiceDetails"; // Import your dynamic page
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* Home page with all sections */}
         <Route
           path="/"
           element={
@@ -55,7 +57,12 @@ function App() {
             </>
           }
         />
+
+        {/* All Projects page */}
         <Route path="/AllProjects" element={<AllProjects />} />
+
+        {/* Dynamic Service Details page */}
+        <Route path="/services/:slug" element={<ServiceDetails />} />
       </Routes>
 
       <Footer />
