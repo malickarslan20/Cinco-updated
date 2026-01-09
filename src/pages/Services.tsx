@@ -24,7 +24,7 @@ const ServiceCard = ({
         onMouseLeave={() => setIsHovered(false)}
         className="group relative h-full cursor-pointer"
       >
-        <div className="relative h-full bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700">
+        <div id="#services" className=" relative h-full bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700">
           <div className="relative h-48 overflow-hidden">
             <img
               src={service.src}
@@ -33,19 +33,19 @@ const ServiceCard = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
 
-            <motion.div
+            {/* <motion.div
               animate={{ scale: isHovered ? 1.1 : 1 }}
               className={`absolute bottom-4 left-6 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-2xl`}
             >
               {service.icon}
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <div className="p-8">
             <h3 className="text-2xl font-bold mb-4 text-white">
               {service.name}
             </h3>
-            {/* <p className="text-gray-400 mb-6">{service.description}</p> */}
+            <p className="text-gray-400 mb-6">{service.description}</p>
 
             <div className="text-purple-400 font-semibold text-sm">
               Learn More →

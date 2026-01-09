@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
 
           {/* View Services → Services Section */}
           <motion.button
-            onClick={() => scrollToSection("services")}
+            onClick={() => scrollToSection("#services")}
            className="bg-[#1a1a1a] text-white px-6 py-3 rounded-lg text-sm sm:text-base transition-colors duration-200 hover:bg-gray-800"
 
             whileHover={{ scale: 1.05 }}

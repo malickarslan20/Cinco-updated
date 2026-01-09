@@ -72,7 +72,7 @@ export const services: Service[] = [
     name: "Machine Learning",
     description:
       "We design and deploy intelligent machine learning solutions that transform raw data into actionable insights.",
-    icon: "🤖",
+    icon: "🤖📊",
     gradient: "from-green-500 to-emerald-500",
     src: "/Gig/Cinco.png",
     details: {
@@ -105,7 +105,7 @@ export const services: Service[] = [
     name: "Python Django Web Development",
     description:
       "Robust and scalable Django solutions tailored for web development, automation, and data processing.",
-    icon: "🐍",
+    icon: "💻🐍",
     gradient: "from-yellow-500 to-orange-500",
     src: "/Gig/Web.png",
     details: {
@@ -138,7 +138,7 @@ export const services: Service[] = [
     name: "AI Agents",
     description:
       "Automated and scalable AI-driven Python solutions tailored for automation and modern requirements.",
-    icon: "✨",
+    icon: "🤖",
     gradient: "from-indigo-500 to-purple-500",
     src: "/Gig/Python.png",
     details: {
